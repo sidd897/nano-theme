@@ -532,6 +532,15 @@ background color that is barely perceptible."
       (nano-dark)
     (nano-light)))
 
+(defun nano-theme-echo-area ()
+  "Function that colors the minibuffer according to the nano-theme"
+  (dolist (buffer (list " *Minibuf-0*" " *Echo Area 0*"
+                        " *Minibuf-1*" " *Echo Area 1*"))
+    (when (get-buffer buffer)
+      (with-current-buffer buffer
+        (face-remap-add-relative 'default
+                                 'nano-faded)))))
+
 (defun nano-theme (theme mode)
   "Apply the nano THEME according to MODE which can be 'dark or 'light."
 
@@ -1550,13 +1559,6 @@ background color that is barely perceptible."
                           :background "#FFCDD2"))))     ;; material color red L100
     '(term-color-yellow ((t (:foreground "#FFEE58"      ;; material color yellow L400
                              :background "#FFF9C4"))))  ;; material color yellow L100
-    ))
-
-  (dolist (buffer (list " *Minibuf-0*" " *Echo Area 0*"
-                        " *Minibuf-1*" " *Echo Area 1*"))
-    (when (get-buffer buffer)
-      (with-current-buffer buffer
-        (face-remap-add-relative 'default 'nano-faded))))
     
     ;; --- V-Term ----------------------------------------------------
     '(vterm-bold          ((t (:inherit nano-strong))))
@@ -1630,6 +1632,10 @@ background color that is barely perceptible."
     `(flymake-note    ((,light (:underline (:color ,nano-light-salient :style wave)))
                        (,dark  (:underline (:color ,nano-dark-salient :style wave)))))
      ))
+
+  ;; Setting up the echo-area of minibuffer
+  (add-hook 'emacs-startup-hook #'nano-theme-echo-area)
+  (add-hook 'server-after-make-frame-hook #'nano-theme-echo-area)
   (advice-remove 'frame-list #'nano-frame-list-advice-selected))
 
 ;;;###autoload
