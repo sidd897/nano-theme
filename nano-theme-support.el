@@ -1548,6 +1548,79 @@ background color that is barely perceptible."
     (when (get-buffer buffer)
       (with-current-buffer buffer
         (face-remap-add-relative 'default 'nano-faded))))
+    
+    ;; --- V-Term ----------------------------------------------------
+    '(vterm-bold          ((t (:inherit nano-strong))))
+    '(vterm-color-black   ((t (:inherit default))))
+    '(vterm-color-blue    ((t (:foreground "#42A5F5" ;; material color blue L400
+                                           :background "#BBDEFB"))))    ;; material color blue L100
+    '(vterm-color-cyan    ((t (:foreground "#26C6DA" ;; material color cyan L400
+                                           :background "#B2EBF2")))) ;; material color cyan L100
+    '(vterm-color-green   ((t (:foreground "#66BB6A" ;; material color green L400
+                                         :background "#C8E6C9")))) ;; material color green L100
+    '(vterm-color-magenta ((t (:foreground "#AB47BC" ;; material color purple L400
+                                           :background "#E1BEE7")))) ;; material color purple L100
+    '(vterm-color-red     ((t (:foreground "#EF5350"    ;; material color red L400
+                                           :background "#FFCDD2")))) ;; material color red L100
+    '(vterm-color-yellow  ((t (:foreground "#FFEE58" ;; material color yellow L400
+                                           :background "#FFF9C4"))))  ;; material color yellow L100
+    '(vterm-color-white   ((t (:background "#BDBDBD" ;; material color white L100
+                                           :foreground "#F5F5F5"))))  ;; material color white L400
+
+    ;; --- Ace-window ----------------------------------------------------
+    '(aw-background-face   ((t (:inherit nano-faded))))
+    '(aw-leading-char-face ((t (:inherit nano-popout :height 1600
+                                         :weight regular))))
+
+    ;; --- Avy ----------------------------------------------------
+    `(avy-lead-face
+      ((,light (:foreground ,nano-light-strong
+                            :inherit nano-subtle :weight bold :slant normal))
+       (,dark  (:foreground ,nano-dark-strong
+                           :inherit nano-subtle :weight bold :slant normal))))
+    `(avy-lead-face-0
+      ((,light (:foreground ,nano-light-strong :background unspecified
+                            :inherit nano-subtle :weight bold :slant normal))
+       (,dark (:foreground ,nano-dark-strong :background unspecified
+                           :inherit nano-subtle :weight bold :slant normal))))
+    `(avy-lead-face-1
+      ((,light (:foreground ,nano-light-strong :background unspecified
+                            :inherit nano-subtle :weight bold :slant normal))
+       (,dark  (:foreground ,nano-dark-strong :background unspecified
+                           :inherit nano-subtle :weight bold :slant normal))))
+    `(avy-lead-face-2
+      ((,light (:foreground ,nano-light-strong :background unspecified
+                            :inherit nano-subtle :weight bold :slant normal))
+       (,dark  (:foreground ,nano-dark-strong :background unspecified
+                           :inherit nano-subtle :weight bold :slant normal))))
+
+    ;; --- bookmark ----------------------------------
+    '(bookmark-face ((t (:inherit nano-faded))))
+    
+    ;; --- helpful ----------------------------------------------------
+    '(helpful-heading ((t (:inherit variable-pitch :weight normal :height 180))))
+    
+    ;; --- Auctex ----------------------------------------------------
+    '(font-latex-italic-face       ((t (:inherit nano-strong))))
+    '(font-latex-bold-face         ((t (:inherit nano-strong))))
+    '(font-latex-math-face         ((t (:inherit nano-salient))))
+    '(font-latex-slide-title-face  ((t (:inherit default :height 1.0
+                                                 :weight normal))))
+    '(font-latex-sectioning-0-face ((t (:inherit default :height 1.0))))
+    '(font-latex-sectioning-1-face ((t (:inherit default :height 1.0))))
+    '(font-latex-sectioning-2-face ((t (:inherit default :height 1.0))))
+    '(font-latex-sectioning-3-face ((t (:inherit default :height 1.0))))
+    '(font-latex-sectioning-4-face ((t (:inherit default :height 1.0))))
+    '(font-latex-sectioning-5-face ((t (:inherit default :height 1.0
+                                                 :weight regular))))
+    ;; --- Flymake ----------------------------------------------------
+    `(flymake-error   ((,light (:underline (:color ,nano-light-critical :style wave)))
+                       (,dark  (:underline (:color ,nano-dark-critical :style wave)))))
+    `(flymake-warning ((,light (:underline (:color ,nano-light-critical :style wave)))
+                       (,dark  (:underline (:color ,nano-dark-critical :style wave)))))
+    `(flymake-note    ((,light (:underline (:color ,nano-light-salient :style wave)))
+                       (,dark  (:underline (:color ,nano-dark-salient :style wave)))))
+     ))
   (advice-remove 'frame-list #'nano-frame-list-advice-selected))
 
 ;;;###autoload
