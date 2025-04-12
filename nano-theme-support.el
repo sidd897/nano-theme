@@ -589,8 +589,8 @@ background color that is barely perceptible."
         (custom-theme-set-faces theme
          `(default ((,light (:foreground ,nano-light-foreground))
                     (,dark  (:foreground ,nano-dark-foreground))))
-         `(nano-strong ((,light (:weight bold :foreground ,nano-light-strong))
-                        (,dark  (:weight bold :foreground ,nano-dark-strong))))))
+         `(nano-strong ((,light (:weight normal :foreground ,nano-light-strong))
+                        (,dark  (:weight normal :foreground ,nano-dark-strong))))))
 
     ;; --- Window divider ----------------------------------------------
     (if nano-window-divider-show
@@ -730,8 +730,8 @@ background color that is barely perceptible."
 
    ;; --- Structural ---------------------------------------------------
    '(bold                        ((t (:inherit nano-strong))))
-   ;; '(italic                      ((t (:slant italic))))
-   '(italic                      ((t (:inherit nano-faded))))
+   '(italic                      ((t (:slant italic))))
+   ;; '(italic                      ((t (:inherit nano-faded))))
    '(bold-italic                 ((t (:inherit nano-strong))))
    '(region                      ((t (:inherit nano-subtle :distant-foreground unspecified))))
    '(fringe                      ((t (:inherit (nano-faded)))))
@@ -786,13 +786,13 @@ background color that is barely perceptible."
    '(line-number-minor-tick       ((t (:inherit nano-faded))))
 
    ;; --- Diff HL (fringe mode) ----------------------------------------
-   '(diff-hl-change                  ((t (:inherit nano-faded-i))))
-   '(diff-hl-insert                  ((t (:inherit nano-salient-i))))
-   '(diff-hl-delete                  ((t (:inherit nano-critical-i))))
+   '(diff-hl-change                  ((t (:inherit nano-faded))))
+   '(diff-hl-insert                  ((t (:inherit nano-salient))))
+   '(diff-hl-delete                  ((t (:inherit nano-critical))))
 
    ;; --- Font lock ----------------------------------------------------
-   '(font-lock-comment-face        ((t (:inherit nano-faded))))
-   '(font-lock-doc-face            ((t (:inherit nano-faded))))
+   '(font-lock-comment-face        ((t (:inherit nano-faded :slant italic))))
+   '(font-lock-doc-face            ((t (:inherit nano-faded :slant italic))))
    '(font-lock-string-face         ((t (:inherit nano-faded))))
    '(font-lock-constant-face       ((t (:inherit nano-salient))))
    '(font-lock-warning-face        ((t (:inherit nano-popout))))
@@ -904,7 +904,7 @@ background color that is barely perceptible."
    '(helpful-heading                ((t (:inherit nano-strong))))
 
    ;; --- Nano modeline ------------------------------------------------
-;;   '(nano-modeline-active               ((t (:inherit nano-subtle))))
+   '(nano-modeline-active               ((t (:inherit nano-subtle))))
    '(nano-modeline-active-name          ((t (:inherit (nano-strong nano-modeline-active)))))
    '(nano-modeline-active-primary       ((t (:inherit (nano-default nano-modeline-active)))))
    '(nano-modeline-active-secondary     ((t (:inherit (nano-faded nano-modeline-active)))))
@@ -912,7 +912,7 @@ background color that is barely perceptible."
    '(nano-modeline-active-status-RW     ((t (:inherit (nano-faded-i nano-strong)))))
    '(nano-modeline-active-status-**     ((t (:inherit (nano-popout-i nano-strong)))))
 
-;;   '(nano-modeline-inactive             ((t (:inherit nano-subtle))))
+   '(nano-modeline-inactive             ((t (:inherit nano-subtle))))
    '(nano-modeline-inactive-name        ((t (:inherit (nano-faded nano-modeline-inactive)))))
    '(nano-modeline-inactive-primary     ((t (:inherit (nano-faded nano-modeline-inactive)))))
    '(nano-modeline-inactive-secondary   ((t (:inherit (nano-faded nano-modeline-inactive)))))
@@ -979,9 +979,9 @@ background color that is barely perceptible."
    ;; --- Vertico --------------------------------------------------------
    '(vertico-current                       ((t (:inherit (nano-strong
                                                           nano-subtle)))))
-   '(vertico-group-separator               ((t (:inherit nano-faded))))
-   '(vertico-group-title                   ((t (:inherit nano-faded))))
-   '(vertico-multiline                     ((t (:inherit nano-faded))))
+   ;; '(vertico-group-separator               ((t (:inherit nano-faded))))
+   ;; '(vertico-group-title                   ((t (:inherit nano-faded))))
+   ;; '(vertico-multiline                     ((t (:inherit nano-faded))))
 
    ;; --- Citar --------------------------------------------------------
    '(citar                          ((t (:inherit nano-faded))))
@@ -999,9 +999,12 @@ background color that is barely perceptible."
    ;; --- Orderless ----------------------------------------------------
    '(orderless-match-face-0         ((t (:inherit (nano-salient
                                                    nano-strong)))))
-   '(orderless-match-face-1         ((t (:inherit (nano-strong)))))
-   '(orderless-match-face-2         ((t (:inherit (nano-strong)))))
-   '(orderless-match-face-3         ((t (:inherit (nano-strong)))))
+   '(orderless-match-face-1         ((t (:inherit (nano-salient
+                                                   nano-strong)))))
+   '(orderless-match-face-2         ((t (:inherit (nano-salient
+                                                   nano-strong)))))
+   '(orderless-match-face-3         ((t (:inherit (nano-salient
+                                                   nano-strong)))))
 
    ;; --- Message ------------------------------------------------------
    '(message-cited-text-1           ((t (:inherit nano-faded))))
@@ -1305,7 +1308,7 @@ background color that is barely perceptible."
     ;; --- Restructured text -------------------------------------------
     '(rst-adornment                           ((t (:inherit nano-faded))))
     '(rst-block                             ((t (:inherit nano-default))))
-    '(rst-comment                             ((t (:inherit nano-faded))))
+    '(rst-comment               ((t (:inherit nano-faded :slant italic))))
     '(rst-definition                        ((t (:inherit nano-salient))))
     '(rst-directive                         ((t (:inherit nano-salient))))
     '(rst-emphasis1                           ((t (:inherit nano-faded))))
@@ -1343,7 +1346,7 @@ background color that is barely perceptible."
     '(markdown-blockquote-face              ((t (:inherit nano-default))))
     '(markdown-bold-face                     ((t (:inherit nano-strong))))
     '(markdown-code-face                    ((t (:inherit nano-default))))
-    '(markdown-comment-face                   ((t (:inherit nano-faded))))
+    '(markdown-comment-face     ((t (:inherit nano-faded :slant italic))))
     '(markdown-footnote-marker-face         ((t (:inherit nano-default))))
     '(markdown-footnote-text-face           ((t (:inherit nano-default))))
     '(markdown-gfm-checkbox-face            ((t (:inherit nano-default))))
@@ -1394,6 +1397,12 @@ background color that is barely perceptible."
     '(magit-diff-removed-highlight           ((t (:inherit (highlight nano-popout nano-strong)))))
     '(magit-diff-revision-summary-highlight  ((t (:inherit ()))))
     '(magit-diff-their-highlight             ((t (:inherit (highlight)))))
+    `(magit-diff-lines-boundary              ((,light (:inherit (nano-default)
+                                                                :underline ,nano-light-faded
+                                                                :overline ,nano-light-faded))
+                                              (,dark (:inherit (nano-default)
+                                                               :underline ,nano-dark-faded
+                                                               :overline ,nano-dark-faded))))
     '(magit-section-highlight                ((t (:inherit (highlight)))))
 
     '(magit-blame-heading                    ((t (:inherit (nano-subtle nano-strong)))))
