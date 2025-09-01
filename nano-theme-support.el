@@ -1586,24 +1586,24 @@ background color that is barely perceptible."
     ;; --- Avy ----------------------------------------------------
     `(avy-lead-face
       ((,light (:foreground ,nano-light-strong
-                            :inherit nano-subtle :weight bold :slant normal))
+                            :inherit (nano-subtle nano-strong) :slant normal))
        (,dark  (:foreground ,nano-dark-strong
-                           :inherit nano-subtle :weight bold :slant normal))))
+                           :inherit (nano-subtle nano-strong) :slant normal))))
     `(avy-lead-face-0
       ((,light (:foreground ,nano-light-strong :background unspecified
-                            :inherit nano-subtle :weight bold :slant normal))
+                            :inherit (nano-subtle nano-strong) :slant normal))
        (,dark (:foreground ,nano-dark-strong :background unspecified
-                           :inherit nano-subtle :weight bold :slant normal))))
+                           :inherit (nano-subtle nano-strong) :slant normal))))
     `(avy-lead-face-1
       ((,light (:foreground ,nano-light-strong :background unspecified
-                            :inherit nano-subtle :weight bold :slant normal))
+                            :inherit (nano-subtle nano-strong) :slant normal))
        (,dark  (:foreground ,nano-dark-strong :background unspecified
-                           :inherit nano-subtle :weight bold :slant normal))))
+                           :inherit (nano-subtle nano-strong) :slant normal))))
     `(avy-lead-face-2
       ((,light (:foreground ,nano-light-strong :background unspecified
-                            :inherit nano-subtle :weight bold :slant normal))
+                            :inherit (nano-subtle nano-strong) :slant normal))
        (,dark  (:foreground ,nano-dark-strong :background unspecified
-                           :inherit nano-subtle :weight bold :slant normal))))
+                           :inherit (nano-subtle nano-strong) :slant normal))))
 
     ;; --- bookmark ----------------------------------
     '(bookmark-face ((t (:inherit nano-faded))))
