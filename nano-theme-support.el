@@ -515,11 +515,13 @@ background color that is barely perceptible."
   (enable-theme 'nano)
   (advice-remove 'frame-list #'nano-frame-list-advice-normal))
 
+;;;###autoload
 (defun nano-dark ()
   "Load the nano dark theme on current frame."
   (interactive)
   (nano-enable 'dark))
 
+;;;###autoload
 (defun nano-light ()
   "Load the nano light theme on current frame."
   (interactive)
@@ -540,7 +542,7 @@ background color that is barely perceptible."
       (with-current-buffer buffer
         (face-remap-add-relative 'default
                                  'nano-faded)))))
-
+;;;###autoload
 (defun nano-theme (theme mode)
   "Apply the nano THEME according to MODE which can be 'dark or 'light."
 
