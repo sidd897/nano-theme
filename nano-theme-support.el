@@ -1528,20 +1528,20 @@ background color that is barely perceptible."
     '(ansi-color-inverse                   ((t (:inherit nano-default-i))))
     '(ansi-color-italic                            ((t (:inherit italic))))
     '(ansi-color-underline                     ((t (:inherit nano-faded))))
-    '(ansi-color-blue           ((t (:foreground "#42A5F5")))) ;; material color blue L400
-    '(ansi-color-bright-blue    ((t (:background "#BBDEFB")))) ;; material color blue L100
-    '(ansi-color-cyan           ((t (:foreground "#26C6DA")))) ;; material color cyan L400
-    '(ansi-color-bright-cyan    ((t (:background "#B2EBF2")))) ;; material color cyan L100
-    '(ansi-color-green          ((t (:foreground "#66BB6A")))) ;; material color green L400
-    '(ansi-color-bright-green   ((t (:background "#C8E6C9")))) ;; material color green L100
-    '(ansi-color-magenta        ((t (:foreground "#AB47BC")))) ;; material color purple L400
-    '(ansi-color-bright-magenta ((t (:background "#E1BEE7")))) ;; material color purple L100
-    '(ansi-color-red            ((t (:foreground "#EF5350")))) ;; material color red L400
-    '(ansi-color-bright-red     ((t (:background "#FFCDD2")))) ;; material color red L100
+    '(ansi-color-blue           ((t (:foreground "#56949f"))))
+    '(ansi-color-bright-blue    ((t (:background "#56949f"))))
+    '(ansi-color-cyan           ((t (:foreground "#d7827e"))))
+    '(ansi-color-bright-cyan    ((t (:background "#d7827e"))))
+    '(ansi-color-green          ((t (:foreground "#286983"))))
+    '(ansi-color-bright-green   ((t (:background "#286983"))))
+    '(ansi-color-magenta        ((t (:foreground "#907aa9"))))
+    '(ansi-color-bright-magenta ((t (:background "#907aa9"))))
+    '(ansi-color-red            ((t (:foreground "#b4637a"))))
+    '(ansi-color-bright-red     ((t (:background "#b4637a"))))
     '(ansi-color-white          ((t (:inherit nano-subtle))))
-    '(ansi-color-bright-white   ((t (:inherit default))))
-    '(ansi-color-yellow         ((t (:foreground "#FFEE58")))) ;; material color yellow L400
-    '(ansi-color-bright-yellow  ((t (:background "#FFF9C4")))) ;; material color yellow L100
+    '(ansi-color-bright-white   ((t (:inherit nano-faded))))
+    '(ansi-color-yellow         ((t (:foreground "#ea9d34"))))
+    '(ansi-color-bright-yellow  ((t (:background "#ea9d34"))))
 
 
     ;; --- Terminal ----------------------------------------------------
